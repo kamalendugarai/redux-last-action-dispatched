@@ -33,7 +33,6 @@ import {combineReducers} from "redux";
 function lastActionDispatched(state={}, action){
     switch (action.type){
         case "LAST_ACTION_DISPATCHED":{
-            console.log(action, "LAST_ACTION_DISPATCHED from reducer")
             state = {...state, ...action.payload};
             break;
         }
@@ -47,12 +46,10 @@ function lastActionDispatched(state={}, action){
 function commonReducer(state={}, action){
     switch (action.type){
         case "LAST_ACTION_DISPATCHED":{
-            console.log(action, "LAST_ACTION_DISPATCHED from reducer")
             state = {...state, ...action.payload};
             break;
         }
         case "SomeAction":{
-            console.log(action, "Some Action from reducer")
             state = {...state, count:action.payload.count};
             break;
         }
@@ -89,7 +86,7 @@ class App extends React.Component{
   }
   
   render(){
-    console.log(this.props);
+    console.log(this.props); /* Check console */
   return (
     <div className="App">
       <header className="App-header">
