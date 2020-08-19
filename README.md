@@ -27,6 +27,7 @@ export default store;
 ```
 
 >Reducer.js
+````bash
 import {combineReducers} from "redux";
 
 function lastActionDispatched(state={}, action){
