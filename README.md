@@ -9,20 +9,110 @@
 ```bash
 npm install --save thunk-last-action-dispatched
 ```
+>
 
 ## Usage
+>Store.js
+```bash
+import {createStore, applyMiddleware} from 'redux';
+import allReducers from "./reducer";
+import thunk from 'redux-thunk';
 
-```jsx
-import React, { Component } from 'react'
+import LastActionDispatched from "thunk-last-action-dispatched";
 
-import MyComponent from 'thunk-last-action-dispatched'
-import 'thunk-last-action-dispatched/dist/index.css'
+const store = createStore(allReducers, {}, applyMiddleware(LastActionDispatched, thunk));
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+export default store;
+
+```
+
+>Reducer.js
+import {combineReducers} from "redux";
+
+function lastActionDispatched(state={}, action){
+    switch (action.type){
+        case "LAST_ACTION_DISPATCHED":{
+            console.log(action, "LAST_ACTION_DISPATCHED from reducer")
+            state = {...state, ...action.payload};
+            break;
+        }
+        default:{
+            return state
+        }
+    }
+    return state;
 }
+
+function commonReducer(state={}, action){
+    switch (action.type){
+        case "LAST_ACTION_DISPATCHED":{
+            console.log(action, "LAST_ACTION_DISPATCHED from reducer")
+            state = {...state, ...action.payload};
+            break;
+        }
+        case "SomeAction":{
+            console.log(action, "Some Action from reducer")
+            state = {...state, count:action.payload.count};
+            break;
+        }
+       default:
+        return state
+    }
+    return state;
+}
+
+const allReducers = combineReducers({
+    commonReducer,
+    lastActionDispatched
+})
+
+export default allReducers;
+
+```
+
+
+>App.js
+```jsx
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import {connect} from 'react-redux';
+
+
+const mapStateToProps = state => ({ state });
+
+class App extends React.Component{
+  componentDidMount(){
+    /* Action dispatched */
+    this.props.dispatch({type:"SomeAction", payload:{count:1}}) 
+  }
+  
+  render(){
+    console.log(this.props);
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+}
+
+
+export default connect(mapStateToProps, null)(App);
+
 ```
 
 ## License

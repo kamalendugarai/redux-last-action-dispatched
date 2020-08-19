@@ -1,13 +1,38 @@
-import React from 'react'
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import {connect} from 'react-redux';
 
-import { ExampleComponent } from 'thunk-last-action-dispatched'
-import 'thunk-last-action-dispatched/dist/index.css'
 
-const App = () => {
-  return <>
-          <ExampleComponent text="HI"/>
+const mapStateToProps = state => ({ state });
 
-        </>
+class App extends React.Component{
+  componentDidMount(){
+    this.props.dispatch({type:"SomeAction", payload:{count:1}})
+  }
+  
+  render(){
+    console.log(this.props);
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
 }
 
-export default App
+
+export default connect(mapStateToProps, null)(App);
