@@ -32,7 +32,7 @@ export default store;
 ```
 
 >Reducer.js
-````bash
+```bash
 import {combineReducers} from "redux";
 
 function lastActionDispatched(state={}, action){
@@ -75,7 +75,7 @@ export default allReducers;
 
 
 >App.js
-```jsx
+```bash
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
