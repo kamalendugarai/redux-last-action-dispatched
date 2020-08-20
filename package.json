@@ -1,10 +1,10 @@
 {
-  "name": "thunk-last-action-dispatched",
-  "version": "1.0.0",
-  "description": "This is add on for thunk. It stores the type and payload of the last action dispatched into the store.",
+  "name": "redux-last-action-dispatched",
+  "version": "0.0.0",
+  "description": "This is add on for redux. It stores the type and payload of the last action dispatched into the store.",
   "author": "kamalendugarai",
   "license": "MIT",
-  "repository": "kamalendugarai/thunk-last-action-dispatched",
+  "repository": "kamalendugarai/redux-last-action-dispatched",
   "main": "dist/index.js",
   "source": "src/index.js",
   "engines": {

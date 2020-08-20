@@ -1,9 +1,10 @@
 # thunk-last-action-dispatched
 
-> This is a middledware for redux. It stores the name of the last action dispatched into store. There might be tricky situation where you need to know the last action dispatched from different component. 
+> There might be tricky situation where you need to know the last action dispatched from the different component than the component which is oiriginally dispatching the action. This is a middledware for redux. It saves the name of the last action dispatched into the store and make it available to consume through reducers. 
 
 [![NPM](https://img.shields.io/npm/v/thunk-last-action-dispatched.svg)](https://www.npmjs.com/package/thunk-last-action-dispatched) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-> Image says a thousand words.
+
+> Image says more than thousand words.
 
 ![Browser console](https://i.postimg.cc/Zqvy2R9L/Screenshot-from-2020-08-20-01-13-36.png)
 
@@ -17,6 +18,8 @@ npm install --save thunk-last-action-dispatched
 >
 
 ## Usage
+
+### Step1
 >Store.js
 ```bash
 import {createStore, applyMiddleware} from 'redux';
@@ -31,6 +34,7 @@ export default store;
 
 ```
 
+### Step2
 >Reducer.js
 ```bash
 import {combineReducers} from "redux";
@@ -73,7 +77,7 @@ export default allReducers;
 
 ```
 
-
+### Step3
 >App.js
 ```bash
 import React from 'react';
