@@ -1,6 +1,6 @@
 import {createStore, applyMiddleware} from 'redux';
 import allReducers from "./reducer";
-import LastActionDispatched from "thunk-last-action-dispatched";
+import LastActionDispatched from "redux-last-action-dispatched";
 
 const store = createStore(allReducers, {}, applyMiddleware(LastActionDispatched));
 

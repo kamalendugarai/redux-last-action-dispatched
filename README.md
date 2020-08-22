@@ -1,8 +1,10 @@
-# thunk-last-action-dispatched
+# redux-last-action-dispatched
 
-> There might be tricky situation where you need to know the last action dispatched from the different component than the component which is oiriginally dispatching the action. This is a middledware for redux. It saves the name of the last action dispatched into the store and make it available to consume through reducers. 
+> There might be tricky situation where you need to know the last action dispatched from the different component than the component which has oiriginally dispatched the action. This is a middledware for redux. This saves the name of the last action dispatched into the store and make it available to consume through reducers. 
 
-[![NPM](https://img.shields.io/npm/v/thunk-last-action-dispatched.svg)](https://www.npmjs.com/package/thunk-last-action-dispatched) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+>**I have used thunk in the example in the name of brevity, that is actually not needed for this.**
+
+[![NPM](https://img.shields.io/npm/v/redux-last-action-dispatched.svg)](https://www.npmjs.com/package/redux-last-action-dispatched) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > Image says more than thousand words.
 
@@ -13,7 +15,7 @@
 ## Install
 
 ```bash
-npm install --save thunk-last-action-dispatched
+npm install --save redux-last-action-dispatched
 ```
 >
 
@@ -26,7 +28,7 @@ import {createStore, applyMiddleware} from 'redux';
 import allReducers from "./reducer";
 import thunk from 'redux-thunk';
 
-import LastActionDispatched from "thunk-last-action-dispatched";
+import LastActionDispatched from "redux-last-action-dispatched";
 
 const store = createStore(allReducers, {}, applyMiddleware(LastActionDispatched, thunk));
 

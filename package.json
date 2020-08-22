@@ -1,6 +1,6 @@
 {
   "name": "redux-last-action-dispatched",
-  "version": "0.0.0",
+  "version": "1.0.2",
   "description": "This is add on for redux. It stores the type and payload of the last action dispatched into the store.",
   "author": "kamalendugarai",
   "license": "MIT",
