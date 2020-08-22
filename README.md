@@ -9,8 +9,6 @@
 
 ![Browser console](https://i.postimg.cc/Zqvy2R9L/Screenshot-from-2020-08-20-01-13-36.png)
 
-
-
 ## Install
 
 ```bash
