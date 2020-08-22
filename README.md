@@ -1,10 +1,9 @@
 # redux-last-action-dispatched
+[![NPM](https://img.shields.io/npm/v/redux-last-action-dispatched.svg)](https://www.npmjs.com/package/redux-last-action-dispatched) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > There might be tricky situation where you need to know the last action dispatched from the different component than the component which has oiriginally dispatched the action. This is a middledware for redux. This saves the name of the last action dispatched into the store and make it available to consume through reducers. 
 
 >**It is due to brevity of usage I have used thunk in the example, that is actually not needed for this to work.**
-
-[![NPM](https://img.shields.io/npm/v/redux-last-action-dispatched.svg)](https://www.npmjs.com/package/redux-last-action-dispatched) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > Image says more than thousand words.
 
